@@ -1,0 +1,71 @@
+# header information:
+Hassignment|9.07
+
+# Views:
+Vlayout|lay
+Vschematic|sch
+
+# Technologies:
+Tmocmos|ScaleFORmocmos()D300.0|mocmosAnalog()BT|mocmosNumberOfMetalLayers()I3
+
+# Cell inverter;1{lay}
+Cinverter;1{lay}||mocmos|1557194046127|1557194114002|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-1-N-Active-Con|contact@0||-14|-12|||R|
+NMetal-1-N-Active-Con|contact@1||14|-12|||R|
+NMetal-1-P-Active-Con|contact@2||28|11|||R|
+NMetal-1-P-Active-Con|contact@3||-28|11|||R|
+NMetal-1-Polysilicon-1-Con|contact@4||-11|-1||||
+NMetal-1-Metal-2-Con|contact@5||-11|-1||||
+NMetal-1-Metal-2-Con|contact@6||-11|-1||||
+NMetal-1-Metal-2-Con|contact@7||28|-12||||
+NN-Transistor|nmos@0||0|-12||1|R||SIM_spice_model(D5G1;)SNMOS
+NPolysilicon-1-Pin|pin@0||0|-1||||
+NMetal-1-Pin|pin@1||28|-12||||
+Ngeneric:Invisible-Pin|pin@2||-29|-1|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vin in 0 DC 0,.dc vin 0 5 1m,".include C:\\Electric\\C5_models.txt"]
+NP-Transistor|pmos@0||0|11|6|7|R||SIM_spice_model(D5G1;)SPMOS
+NMetal-1-P-Well-Con|substr@0||0|-21|34|||
+NMetal-1-N-Well-Con|well@0||0|22|62|||
+AN-Active|net@0|||S1800|nmos@0|diff-bottom|4|-12|contact@1||14|-12
+AN-Active|net@1|||S0|nmos@0|diff-top|-4|-12|contact@0||-14|-12
+APolysilicon-1|net@2|||S2700|pin@0||0|-1|pmos@0|poly-left|0|4.5
+APolysilicon-1|net@3|||S0|pin@0||0|-1|contact@4||-11|-1
+AMetal-1|net@4||1|S0|contact@4||-11|-1|contact@5||-11|-1
+APolysilicon-1|net@5|||S2700|nmos@0|poly-right|0|-8.5|pin@0||0|-1
+AMetal-1|net@6||1|S1800|contact@6||-11|-1|contact@5||-11|-1
+AP-Active|net@7|||S1800|pmos@0|diff-bottom|7|11|contact@2||28|11
+AMetal-1|net@8||1|S1800|contact@1||14|-12|pin@1||28|-12
+AMetal-1|net@9||1|S900|contact@2||28|11|pin@1||28|-12
+AMetal-1|net@10||1|S0|contact@7||28|-12|pin@1||28|-12
+AMetal-1|net@11||1|S900|contact@0||-14|-12|substr@0||-14|-21
+AMetal-1|net@12||1|S2700|contact@3||-28|11|well@0||-28|22
+AP-Active|net@13|||S0|pmos@0|diff-top|-7|11|contact@3||-28|11
+Egnd||D5G2;|substr@0||U
+Ein||D5G2;|contact@4||U
+Eout||D5G2;|contact@7||U
+Evdd||D5G2;|well@0||U
+X
+
+# Cell inverter;1{sch}
+Cinverter;1{sch}||schematic|1556534309588|1556538261190|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@2||-10|3||||
+NOff-Page|conn@3||5|3||||
+NGround|gnd@1||-2|-4.5|-1|-1||
+NTransistor|nmos@1||-4|0|||R||ATTR_length(D5G0.5;X-0.75;Y-3;)S10|ATTR_width(D5G1;Y-3;)S10|SIM_spice_model(D5G1;X1.5;Y-3.5;)SNMOS
+NWire_Pin|pin@5||-5|3||||
+NWire_Pin|pin@6||-2|3||||
+Ngeneric:Invisible-Pin|pin@7||-15|-1|||||SIM_spice_card(D5G1;)S[vdd vdd 0 5,vin in 0 DC 0,.dc vin 0 5 1m,".include C:\\Electric\\C5_models.txt"]
+NTransistor|pmos@1||-4|6|||YR|2|ATTR_length(D5G0.5;X1.25;Y-2;)S10|ATTR_width(D5G1;Y-2;)S300|SIM_spice_model(D5G1;X-1.5;Y-3.5;)SPMOS
+NPower|pwr@1||-2|10|-1|-1||
+Awire|net@14|||900|pmos@1|g|-5|6|pin@5||-5|3
+Awire|net@15|||900|pin@5||-5|3|nmos@1|g|-5|0
+Awire|net@16|||1800|conn@2|y|-8|3|pin@5||-5|3
+Awire|net@17|||900|pmos@1|d|-2|4|pin@6||-2|3
+Awire|net@18|||900|pin@6||-2|3|nmos@1|d|-2|2
+Awire|net@19|||0|conn@3|a|3|3|pin@6||-2|3
+Awire|net@20|||900|nmos@1|s|-2|-2|gnd@1||-2|-3
+Awire|net@21|||900|pwr@1||-2|10|pmos@1|s|-2|8
+Ein||D5G2;|conn@2|a|U
+Eout||D5G2;|conn@3|a|U
+X
